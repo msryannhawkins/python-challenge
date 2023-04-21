@@ -55,8 +55,17 @@ for key,val in CanDict.items():
         print(f"{key}: {round(val/TV*100, 3)}% ({val})")
 
 print(Winner)
-        
 
+outputpath = os.path.join('Py_Poll', 'Analysis', "Analysis.txt")
+Analysis=open(outputpath, "a+")
+Analysis.write("Election Results \n")
+Analysis.write("---------------------------- \n")
+Analysis.write(f'Total Votes: {TV}\n')
+Analysis.write("---------------------------- \n")
+for key,val in CanDict.items(): 
+    Analysis.write(f"{key}: {round(val/TV*100, 3)}% ({val})\n")
+Analysis.write("---------------------------- \n")
+Analysis.write(f'Winner: {Winner}\n')
+Analysis.write("---------------------------- \n")
 
-
-
+Analysis.close()

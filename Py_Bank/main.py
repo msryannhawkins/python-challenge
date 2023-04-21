@@ -56,3 +56,16 @@ print(f'Total: ${total}')
 print (f'Average Change: ${ChngAvg}')
 print (f'Greatest Increase in Profits: {DateMax} $({max(change)})') 
 print (f'Greatest Decrease in Profits: {DateMin} $({min (change)})')
+
+
+outputpath = os.path.join('Py_Bank', 'Analysis', "Analysis.txt")
+Analysis=open(outputpath, "a+")
+Analysis.write("Financial Analysis \n")
+Analysis.write("---------------------------- \n")
+Analysis.write(f'Total Months: {len(months)}\n')
+Analysis.write(f'Total: ${total}\n')
+Analysis.write(f'Average Change: ${ChngAvg}\n')
+Analysis.write(f'Greatest Increase in Profits: {DateMax} $({max(change)})\n') 
+Analysis.write(f'Greatest Decrease in Profits: {DateMin} $({min (change)})\n')
+
+Analysis.close()
